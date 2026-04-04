@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f9fb;
+    color: #191c1e;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-primary-gradient text-white font-inter font-medium px-6 py-3 rounded-xl transition-all duration-200 hover:scale-[1.02] hover:brightness-105 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-surface-container-highest text-primary font-inter font-medium px-6 py-3 rounded-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-ghost-white {
+    @apply inline-flex items-center gap-2 border border-white/30 text-white font-inter font-medium px-6 py-3 rounded-xl transition-all duration-200 hover:bg-white/10 active:scale-[0.98];
+  }
+
+  .card {
+    @apply bg-surface-container-lowest rounded-2xl p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift;
+  }
+
+  .section-label {
+    @apply inline-block text-xs font-inter font-medium tracking-widest text-on-surface-variant uppercase;
+  }
+
+  .pill-badge {
+    @apply inline-flex items-center gap-2 bg-surface-container-highest text-on-surface-variant text-xs font-inter font-medium px-4 py-2 rounded-full;
+  }
+
+  .input-field {
+    @apply w-full bg-surface-container-low text-on-surface font-inter text-sm px-4 py-3 rounded-xl outline-none border border-transparent focus:border-primary/20 transition-colors duration-200 placeholder-on-surface-variant/50;
+  }
+
+  .geo-shape {
+    @apply absolute rounded-full opacity-5 bg-primary pointer-events-none;
+  }
+}
+
+@layer utilities {
+  .font-manrope {
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #003ec7, #0052ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-primary-gradient {
+    background: linear-gradient(135deg, #003ec7, #0052ff);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
