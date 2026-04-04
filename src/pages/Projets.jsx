@@ -4,14 +4,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import AnimatedSection, { StaggerContainer, StaggerItem } from '../components/AnimatedSection'
 
-const filters = ['Tous', 'Web', 'Branding', 'SEO']
+const filters = ['Tous', 'Web', 'Design', 'SEO', 'Photo']
 
 const projects = [
   {
     id: 1,
     title: "L'Élite Urbaine",
     category: 'Web',
-    label: 'WEB DEVELOPMENT',
+    label: 'CRÉATION WEB',
     img: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=80',
     dark: true,
     size: 'large',
@@ -19,8 +19,8 @@ const projects = [
   {
     id: 2,
     title: 'Solaris Tech',
-    category: 'Branding',
-    label: 'BRANDING',
+    category: 'Design',
+    label: 'DESIGN GRAPHIQUE',
     img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
     dark: false,
     size: 'small',
@@ -29,7 +29,7 @@ const projects = [
     id: 3,
     title: 'Echo Magazine',
     category: 'SEO',
-    label: 'SEO & WEB',
+    label: 'SEO & PUBLICITÉ',
     img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80',
     dark: false,
     size: 'small',
@@ -38,7 +38,7 @@ const projects = [
     id: 4,
     title: 'Accélération Nexa',
     category: 'Web',
-    label: 'STRATÉGIE DIGITALE',
+    label: 'CRÉATION WEB',
     img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80',
     dark: true,
     size: 'large',
@@ -46,8 +46,8 @@ const projects = [
   {
     id: 5,
     title: 'Vogue Paris',
-    category: 'Branding',
-    label: 'BRANDING',
+    category: 'Design',
+    label: 'DESIGN & IMPRESSION',
     img: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80',
     dark: true,
     size: 'equal',
@@ -64,8 +64,8 @@ const projects = [
   {
     id: 7,
     title: 'Koda SaaS',
-    category: 'Web',
-    label: 'WEB',
+    category: 'Photo',
+    label: 'PHOTO & VIDÉO',
     img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80',
     dark: false,
     size: 'equal',

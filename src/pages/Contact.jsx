@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Clock, Award } from 'lucide-react'
 import AnimatedSection from '../components/AnimatedSection'
 
-const projectTypes = ['Stratégie', 'Développement Web', 'UI/UX Design', 'E-commerce']
+const projectTypes = ['Création Web', 'Design & Impression', 'Social Media', 'SEO & Pub', 'Photo & Vidéo']
 
 export default function Contact() {
   const [selectedType, setSelectedType] = useState('')

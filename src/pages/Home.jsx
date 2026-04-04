@@ -5,41 +5,40 @@ import {
   ArrowRight,
   ChevronLeft,
   ChevronRight,
-  Sparkles,
   Globe,
   Palette,
-  SearchCheck,
-  Camera,
+  Share2,
   TrendingUp,
+  Camera,
 } from 'lucide-react'
 import AnimatedSection, { StaggerContainer, StaggerItem } from '../components/AnimatedSection'
 import CTABanner from '../components/CTABanner'
 
 const services = [
   {
-    icon: <Sparkles size={22} />,
-    title: 'Création de Contenu',
-    desc: 'Stratégie éditoriale, copywriting et production de contenus qui convertissent.',
-  },
-  {
     icon: <Globe size={22} />,
-    title: 'Sites Web',
-    desc: 'Conception et développement de sites performants, modernes et optimisés.',
+    title: 'Création de sites web',
+    desc: 'Sites vitrines, e-commerce et applications web sur mesure, performants et optimisés pour convertir.',
   },
   {
     icon: <Palette size={22} />,
-    title: 'Graphisme',
-    desc: 'Identité visuelle, charte graphique et supports de communication impactants.',
+    title: 'Design graphique et impression',
+    desc: 'Logo, identité visuelle, supports print et digitaux qui reflètent vos valeurs.',
   },
   {
-    icon: <SearchCheck size={22} />,
-    title: 'SEO & Stratégie',
-    desc: 'Référencement naturel, audit technique et stratégie de visibilité en ligne.',
+    icon: <Share2 size={22} />,
+    title: 'Contenu & réseaux sociaux',
+    desc: 'Stratégie éditoriale, création et gestion de vos communautés sur tous les réseaux.',
+  },
+  {
+    icon: <TrendingUp size={22} />,
+    title: 'SEO & publicité',
+    desc: 'Référencement naturel, Google Ads et Meta Ads pour booster votre visibilité au Bénin et en Afrique.',
   },
   {
     icon: <Camera size={22} />,
-    title: 'Photographie',
-    desc: 'Shooting professionnel, reportage corporate et photographie produit.',
+    title: 'Photographie / vidéo',
+    desc: 'Shootings produit, portraits corporate et films institutionnels qui racontent votre histoire.',
   },
 ]
 
@@ -79,11 +78,11 @@ const expertiseCards = [
 ]
 
 const servicePills = [
-  'Création de contenu',
-  'Sites web',
-  'Graphisme',
-  'SEO',
-  'Photographie',
+  'Création de sites web',
+  'Design graphique',
+  'Contenu & réseaux sociaux',
+  'SEO & publicité',
+  'Photographie / vidéo',
 ]
 
 export default function Home() {
@@ -191,15 +190,15 @@ export default function Home() {
             <div className="relative rounded-2xl overflow-hidden h-64 md:h-80 shadow-card group">
               <img
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80"
-                alt="Stratégie Digitale"
+                alt="Création de sites web"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-on-surface/70 via-transparent" />
               <div className="absolute bottom-6 left-6 text-white">
                 <p className="font-inter text-xs tracking-widest uppercase text-white/60 mb-1">01</p>
-                <h3 className="font-manrope font-bold text-2xl tracking-tight">Stratégie Digitale</h3>
+                <h3 className="font-manrope font-bold text-2xl tracking-tight">Création de sites web</h3>
                 <p className="font-inter text-sm text-white/70 mt-1 max-w-xs">
-                  Une vision à 360° pour maximiser votre impact en ligne.
+                  Sites vitrines, e-commerce et applications web sur mesure, performants et optimisés pour convertir.
                 </p>
               </div>
             </div>
@@ -213,9 +212,9 @@ export default function Home() {
               </div>
               <div>
                 <p className="font-inter text-xs tracking-widest uppercase text-white/50 mb-1">02</p>
-                <h3 className="font-manrope font-bold text-2xl text-white tracking-tight">Performance SEO</h3>
+                <h3 className="font-manrope font-bold text-2xl text-white tracking-tight">SEO & publicité</h3>
                 <p className="font-inter text-sm text-white/70 mt-2">
-                  Classez-vous en première page et attirez des visiteurs qualifiés.
+                  Référencement naturel, Google Ads et Meta Ads pour booster votre visibilité.
                 </p>
               </div>
             </div>
@@ -229,35 +228,51 @@ export default function Home() {
               </div>
               <div>
                 <p className="font-inter text-xs tracking-widest uppercase text-on-surface-variant/50 mb-1">03</p>
-                <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight">Design UI/UX</h3>
+                <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight">Design graphique et impression</h3>
                 <p className="font-inter text-sm text-on-surface-variant mt-2">
-                  Interfaces intuitives et expériences utilisateur mémorables.
+                  Logo, identité visuelle, supports print et digitaux qui reflètent vos valeurs.
                 </p>
               </div>
             </div>
           </StaggerItem>
 
-          {/* Card 4 — horizontal with code image */}
+          {/* Card 4 — horizontal with image */}
           <StaggerItem className="md:col-span-2">
             <div className="card h-64 flex flex-col md:flex-row overflow-hidden p-0">
               <div className="flex-1 p-6 flex flex-col justify-between">
                 <div className="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-primary">
-                  <Globe size={22} />
+                  <Share2 size={22} />
                 </div>
                 <div>
                   <p className="font-inter text-xs tracking-widest uppercase text-on-surface-variant/50 mb-1">04</p>
-                  <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight">Développement Web</h3>
+                  <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight">Contenu & réseaux sociaux</h3>
                   <p className="font-inter text-sm text-on-surface-variant mt-2">
-                    Applications web robustes et sites haute performance.
+                    Stratégie éditoriale, création et gestion de vos communautés sur tous les réseaux.
                   </p>
                 </div>
               </div>
               <div className="w-full md:w-1/2 h-40 md:h-auto">
                 <img
-                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80"
-                  alt="Développement Web"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+                  alt="Contenu & réseaux sociaux"
                   className="w-full h-full object-cover rounded-r-2xl"
                 />
+              </div>
+            </div>
+          </StaggerItem>
+
+          {/* Card 5 — full width blue gradient */}
+          <StaggerItem className="md:col-span-3">
+            <div className="bg-primary-gradient rounded-2xl p-6 h-48 flex flex-col md:flex-row items-center gap-6 group transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+              <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                <Camera size={22} />
+              </div>
+              <div>
+                <p className="font-inter text-xs tracking-widest uppercase text-white/50 mb-1">05</p>
+                <h3 className="font-manrope font-bold text-2xl text-white tracking-tight">Photographie / vidéo</h3>
+                <p className="font-inter text-sm text-white/70 mt-2 max-w-xl">
+                  Shootings produit, portraits corporate et films institutionnels qui racontent votre histoire.
+                </p>
               </div>
             </div>
           </StaggerItem>

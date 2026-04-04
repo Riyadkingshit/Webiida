@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Globe, Palette, Sparkles, SearchCheck, Camera, Check, ArrowRight } from 'lucide-react'
+import { Globe, Palette, Share2, TrendingUp, Camera, Check, ArrowRight } from 'lucide-react'
 import AnimatedSection, { StaggerContainer, StaggerItem } from '../components/AnimatedSection'
 import CTABanner from '../components/CTABanner'
 
@@ -46,18 +46,18 @@ export default function Expertise() {
       {/* ── GRILLE SERVICES ─────────────────── */}
       <section className="px-6 pb-20 max-w-6xl mx-auto">
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4" stagger={0.08}>
-          {/* Sites Web */}
+          {/* Création de sites web */}
           <StaggerItem>
             <div className="card h-full">
               <div className="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-primary mb-5">
                 <Globe size={22} />
               </div>
-              <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight mb-3">Sites Web</h3>
+              <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight mb-3">Création de sites web</h3>
               <p className="font-inter text-sm text-on-surface-variant leading-relaxed mb-5">
-                Des sites performants qui convertissent vos visiteurs en clients.
+                Sites vitrines, e-commerce et applications web sur mesure, performants et optimisés pour convertir.
               </p>
               <div className="flex flex-wrap gap-2">
-                {['Next.js', 'E-Commerce', 'Performance'].map((tag) => (
+                {['Vitrine', 'E-Commerce', 'Performance'].map((tag) => (
                   <span key={tag} className="text-xs font-inter bg-surface-container-low text-primary px-3 py-1 rounded-full">
                     {tag}
                   </span>
@@ -71,7 +71,7 @@ export default function Expertise() {
             <div className="relative rounded-2xl overflow-hidden h-64 md:h-auto md:min-h-[280px] shadow-card">
               <img
                 src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=700&q=80"
-                alt="Équipe Webida"
+                alt="Équipe Webiidia"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-on-surface/40 backdrop-blur-[2px]" />
@@ -84,7 +84,7 @@ export default function Expertise() {
             </div>
           </StaggerItem>
 
-          {/* Graphisme */}
+          {/* Design graphique et impression */}
           <StaggerItem>
             <div className="card h-full relative overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -94,45 +94,45 @@ export default function Expertise() {
                 <div className="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-primary mb-5">
                   <Palette size={22} />
                 </div>
-                <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight mb-3">Graphisme</h3>
+                <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight mb-3">Design graphique et impression</h3>
                 <p className="font-inter text-sm text-on-surface-variant leading-relaxed">
-                  Identité visuelle forte, supports de communication percutants et charte graphique cohérente.
+                  Logo, identité visuelle, supports print et digitaux qui reflètent vos valeurs.
                 </p>
               </div>
             </div>
           </StaggerItem>
 
-          {/* Création de contenu */}
+          {/* Contenu & réseaux sociaux */}
           <StaggerItem className="md:col-span-2">
             <div className="card h-full flex flex-col md:flex-row gap-6 overflow-hidden p-0">
               <div className="flex-1 p-6">
                 <div className="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-primary mb-5">
-                  <Sparkles size={22} />
+                  <Share2 size={22} />
                 </div>
-                <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight mb-3">Création de Contenu</h3>
+                <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight mb-3">Contenu & réseaux sociaux</h3>
                 <p className="font-inter text-sm text-on-surface-variant leading-relaxed">
-                  Stratégie éditoriale, copywriting impactant et production de contenus multicanaux pour engager votre audience.
+                  Stratégie éditoriale, création et gestion de vos communautés sur tous les réseaux.
                 </p>
               </div>
               <div className="w-full md:w-48 h-48 md:h-auto flex-shrink-0">
                 <img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80"
-                  alt="Équipe contenu"
+                  alt="Contenu & réseaux sociaux"
                   className="w-full h-full object-cover md:rounded-r-2xl"
                 />
               </div>
             </div>
           </StaggerItem>
 
-          {/* SEO & Stratégie */}
+          {/* SEO & publicité */}
           <StaggerItem>
             <div className="card h-full">
               <div className="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-primary mb-5">
-                <SearchCheck size={22} />
+                <TrendingUp size={22} />
               </div>
-              <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight mb-4">SEO & Stratégie</h3>
+              <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight mb-4">SEO & publicité</h3>
               <ul className="space-y-2">
-                {['Audit Technique', 'Analyse Concurrentielle', 'Reporting Mensuel'].map((item) => (
+                {['Référencement naturel', 'Google Ads & Meta Ads', 'Reporting Mensuel'].map((item) => (
                   <li key={item} className="flex items-center gap-2 font-inter text-sm text-on-surface-variant">
                     <Check size={14} className="text-primary flex-shrink-0" />
                     {item}
@@ -142,16 +142,16 @@ export default function Expertise() {
             </div>
           </StaggerItem>
 
-          {/* Photographie — blue */}
+          {/* Photographie / vidéo — blue */}
           <StaggerItem className="md:col-span-2">
             <div className="bg-primary-gradient rounded-2xl p-6 h-full flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1 hover:shadow-lift min-h-[200px]">
               <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white mb-5">
                 <Camera size={22} />
               </div>
               <div>
-                <h3 className="font-manrope font-bold text-2xl text-white tracking-tight mb-2">Photographie</h3>
+                <h3 className="font-manrope font-bold text-2xl text-white tracking-tight mb-2">Photographie / vidéo</h3>
                 <p className="font-inter text-sm text-white/70 mb-4">
-                  Shooting professionnel, reportage corporate et photographie produit pour valoriser votre marque.
+                  Shootings produit, portraits corporate et films institutionnels qui racontent votre histoire.
                 </p>
                 <Link
                   to="/projets"

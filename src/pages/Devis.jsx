@@ -1,32 +1,38 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Palette, Globe, Sparkles, TrendingUp, Lock, Clock, MessageSquare, Award } from 'lucide-react'
+import { Globe, Palette, Share2, TrendingUp, Camera, Lock, Clock, MessageSquare, Award } from 'lucide-react'
 import AnimatedSection from '../components/AnimatedSection'
 
 const services = [
   {
-    id: 'branding',
-    icon: <Palette size={22} />,
-    title: 'Branding',
-    desc: 'Identité visuelle, logo, charte graphique.',
-  },
-  {
     id: 'web',
     icon: <Globe size={22} />,
-    title: 'Web Design',
-    desc: 'Site vitrine, e-commerce, application web.',
+    title: 'Création de sites web',
+    desc: 'Site vitrine, e-commerce, application web sur mesure.',
   },
   {
-    id: 'contenu',
-    icon: <Sparkles size={22} />,
-    title: 'Contenu',
-    desc: 'Stratégie éditoriale, copywriting, réseaux sociaux.',
+    id: 'design',
+    icon: <Palette size={22} />,
+    title: 'Design graphique et impression',
+    desc: 'Logo, identité visuelle, supports print et digitaux.',
   },
   {
-    id: 'ads',
+    id: 'social',
+    icon: <Share2 size={22} />,
+    title: 'Contenu & réseaux sociaux',
+    desc: 'Stratégie éditoriale, création et gestion de communautés.',
+  },
+  {
+    id: 'seo',
     icon: <TrendingUp size={22} />,
-    title: 'Digital Ads',
-    desc: 'Campagnes publicitaires, SEO, analytics.',
+    title: 'SEO & publicité',
+    desc: 'Référencement naturel, Google Ads et Meta Ads.',
+  },
+  {
+    id: 'photo',
+    icon: <Camera size={22} />,
+    title: 'Photographie / vidéo',
+    desc: 'Shootings produit, portraits corporate et films institutionnels.',
   },
 ]
 

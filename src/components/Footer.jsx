@@ -1,28 +1,53 @@
 import { Link } from 'react-router-dom'
 import { Instagram, Linkedin } from 'lucide-react'
 
+const footerServices = [
+  'Création de sites web',
+  'Design graphique et impression',
+  'Contenu & réseaux sociaux',
+  'SEO & publicité',
+  'Photographie / vidéo',
+]
+
 export default function Footer() {
   return (
     <footer className="bg-surface border-t border-outline-variant mt-0">
       <div className="max-w-6xl mx-auto px-6 py-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo */}
-          <Link to="/" className="font-manrope font-extrabold text-xl text-on-surface tracking-tight">
-            Webida
-          </Link>
+        <div className="flex flex-col md:flex-row items-start justify-between gap-8 mb-8">
+          {/* Logo + tagline */}
+          <div>
+            <Link to="/" className="font-manrope font-extrabold text-xl text-on-surface tracking-tight">
+              Webiidia
+            </Link>
+            <p className="font-inter text-xs text-on-surface-variant mt-2 max-w-[200px]">
+              Votre partenaire créatif digital à Cotonou, Bénin.
+            </p>
+          </div>
 
-          {/* Links */}
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <Link
-              to="#"
-              className="text-sm font-inter text-on-surface-variant hover:text-on-surface transition-colors"
-            >
+          {/* Services */}
+          <div>
+            <p className="font-inter text-xs font-medium text-on-surface uppercase tracking-widest mb-3">Nos Services</p>
+            <ul className="space-y-2">
+              {footerServices.map((service) => (
+                <li key={service}>
+                  <Link
+                    to="/expertise"
+                    className="text-sm font-inter text-on-surface-variant hover:text-primary transition-colors"
+                  >
+                    {service}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Links & socials */}
+          <div className="flex flex-col gap-2">
+            <p className="font-inter text-xs font-medium text-on-surface uppercase tracking-widest mb-1">Liens</p>
+            <Link to="#" className="text-sm font-inter text-on-surface-variant hover:text-on-surface transition-colors">
               Mentions Légales
             </Link>
-            <Link
-              to="#"
-              className="text-sm font-inter text-on-surface-variant hover:text-on-surface transition-colors"
-            >
+            <Link to="#" className="text-sm font-inter text-on-surface-variant hover:text-on-surface transition-colors">
               Confidentialité
             </Link>
             <a
@@ -44,10 +69,12 @@ export default function Footer() {
               Instagram
             </a>
           </div>
+        </div>
 
-          {/* Copyright */}
-          <p className="text-sm font-inter text-on-surface-variant text-center md:text-right">
-            © 2024 Webida.<br className="md:hidden" /> Votre partenaire créatif digital.
+        {/* Bottom bar */}
+        <div className="border-t border-outline-variant pt-6">
+          <p className="text-sm font-inter text-on-surface-variant text-center">
+            © 2024 Webiidia. Votre partenaire créatif digital.
           </p>
         </div>
       </div>
