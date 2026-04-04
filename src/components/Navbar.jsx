@@ -40,8 +40,35 @@ export default function Navbar() {
           style={{ border: '1px solid rgba(195,197,217,0.20)' }}
         >
           {/* Logo */}
-          <Link to="/" className="font-manrope font-extrabold text-xl text-on-surface tracking-tight">
-            Webida
+          <Link to="/">
+            <svg height="44" viewBox="0 0 520 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style={{stopColor:'#003ec7'}}/>
+                  <stop offset="100%" style={{stopColor:'#0052ff'}}/>
+                </linearGradient>
+              </defs>
+              <polygon points="38,2 68,18 68,54 38,70 8,54 8,18" fill="url(#g1)"/>
+              <polyline points="17,24 26,52 38,34 50,52 59,24"
+                stroke="white" strokeWidth="5.5"
+                strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <text x="78" y="60"
+                fontFamily="Manrope,sans-serif" fontWeight="800"
+                fontSize="48" letterSpacing="-2" fill="#191c1e">Web</text>
+              <rect x="195" y="25" width="7" height="36" rx="3.5" fill="#191c1e"/>
+              <rect x="211" y="25" width="7" height="36" rx="3.5" fill="#191c1e"/>
+              <circle cx="198.5" cy="14" r="6" fill="url(#g1)"/>
+              <circle cx="214.5" cy="14" r="6" fill="url(#g1)"/>
+              <path d="M 191 68 Q 207 83 223 68"
+                stroke="url(#g1)" strokeWidth="3.2"
+                strokeLinecap="round" fill="none"/>
+              <polyline points="217,64 223,68 217,72"
+                stroke="url(#g1)" strokeWidth="3.2"
+                strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <text x="222" y="60"
+                fontFamily="Manrope,sans-serif" fontWeight="800"
+                fontSize="48" letterSpacing="-2" fill="#191c1e">dia</text>
+            </svg>
           </Link>
 
           {/* Desktop links */}
