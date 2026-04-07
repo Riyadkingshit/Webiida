@@ -5,41 +5,53 @@ import {
   ArrowRight,
   ChevronLeft,
   ChevronRight,
-  Sparkles,
   Globe,
   Palette,
+  Megaphone,
   SearchCheck,
   Camera,
   TrendingUp,
+  Tag,
+  MapPin,
 } from 'lucide-react'
 import AnimatedSection, { StaggerContainer, StaggerItem } from '../components/AnimatedSection'
 import CTABanner from '../components/CTABanner'
 
 const services = [
   {
-    icon: <Sparkles size={22} />,
-    title: 'Création de Contenu',
-    desc: 'Stratégie éditoriale, copywriting et production de contenus qui convertissent.',
-  },
-  {
     icon: <Globe size={22} />,
-    title: 'Sites Web',
-    desc: 'Conception et développement de sites performants, modernes et optimisés.',
+    title: 'Création de sites web',
+    desc: 'Conception et développement de sites vitrines, e-commerce et applications web sur mesure.',
   },
   {
     icon: <Palette size={22} />,
-    title: 'Graphisme',
-    desc: 'Identité visuelle, charte graphique et supports de communication impactants.',
+    title: 'Design graphique & impression',
+    desc: 'Identité visuelle, logo, charte graphique, flyers, cartes de visite et tous supports print.',
+  },
+  {
+    icon: <Megaphone size={22} />,
+    title: 'Contenu & réseaux sociaux',
+    desc: 'Stratégie éditoriale, création de contenu et community management pour vos réseaux.',
   },
   {
     icon: <SearchCheck size={22} />,
-    title: 'SEO & Stratégie',
-    desc: 'Référencement naturel, audit technique et stratégie de visibilité en ligne.',
+    title: 'SEO & publicité',
+    desc: 'Référencement naturel, Google Ads, Meta Ads et optimisation de votre visibilité en ligne.',
   },
   {
     icon: <Camera size={22} />,
-    title: 'Photographie',
-    desc: 'Shooting professionnel, reportage corporate et photographie produit.',
+    title: 'Photographie / vidéo',
+    desc: 'Shooting professionnel, reportage corporate, vidéo institutionnelle et contenu visuel.',
+  },
+  {
+    icon: <Tag size={22} />,
+    title: 'Étiquettes Google',
+    desc: 'Configuration Google Tag Manager & Analytics pour suivre et optimiser vos performances.',
+  },
+  {
+    icon: <MapPin size={22} />,
+    title: 'Google Business',
+    desc: 'Création et optimisation de votre fiche Google Business pour la visibilité locale.',
   },
 ]
 
@@ -79,11 +91,19 @@ const expertiseCards = [
 ]
 
 const servicePills = [
-  'Création de contenu',
   'Sites web',
-  'Graphisme',
-  'SEO',
+  'Design graphique',
+  'Réseaux sociaux',
+  'SEO & publicité',
   'Photographie',
+  'Google Business',
+]
+
+const collectifMembers = [
+  { name: 'Kofi Mensah', role: 'Directeur Général', initials: 'KM' },
+  { name: 'Aïcha Boni', role: 'Directrice Artistique', initials: 'AB' },
+  { name: 'Stéphane Dossou', role: 'Développeur Web', initials: 'SD' },
+  { name: 'Fatou Yémadjè', role: 'Photographe', initials: 'FY' },
 ]
 
 export default function Home() {
@@ -91,7 +111,7 @@ export default function Home() {
 
   const scroll = (dir) => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: dir * 340, behavior: 'smooth' })
+      scrollRef.current.scrollBy({ left: dir * 280, behavior: 'smooth' })
     }
   }
 
@@ -99,7 +119,6 @@ export default function Home() {
     <div className="pt-24">
       {/* ── HERO ─────────────────────────────── */}
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-6 py-20 overflow-hidden">
-        {/* Background geometric shapes */}
         <div className="geo-shape w-96 h-96 -top-20 -left-20" />
         <div className="geo-shape w-72 h-72 top-1/4 -right-16" />
         <div className="geo-shape w-48 h-48 bottom-10 left-1/4" />
@@ -110,7 +129,6 @@ export default function Home() {
           animate="visible"
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
         >
-          {/* Badge */}
           <motion.div
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             transition={{ duration: 0.6 }}
@@ -121,7 +139,6 @@ export default function Home() {
             </span>
           </motion.div>
 
-          {/* H1 */}
           <motion.h1
             className="font-manrope font-extrabold text-5xl md:text-7xl text-on-surface tracking-tight leading-[1.05] mb-6"
             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
@@ -132,17 +149,15 @@ export default function Home() {
             <span className="text-primary">créatif digital</span>
           </motion.h1>
 
-          {/* Subtitle */}
           <motion.p
             className="font-inter text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed"
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             transition={{ duration: 0.6 }}
           >
-            Webida conçoit des stratégies digitales sur mesure pour propulser votre marque
+            Webiidia conçoit des stratégies digitales sur mesure pour propulser votre marque
             au cœur du numérique — à Cotonou et au-delà.
           </motion.p>
 
-          {/* CTA buttons */}
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12"
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
@@ -157,7 +172,6 @@ export default function Home() {
             </Link>
           </motion.div>
 
-          {/* Service pills */}
           <motion.div
             className="flex flex-wrap items-center justify-center gap-2"
             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
@@ -186,7 +200,6 @@ export default function Home() {
         </AnimatedSection>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4" stagger={0.1}>
-          {/* Card 1 — image background, large */}
           <StaggerItem className="md:col-span-2">
             <div className="relative rounded-2xl overflow-hidden h-64 md:h-80 shadow-card group">
               <img
@@ -205,7 +218,6 @@ export default function Home() {
             </div>
           </StaggerItem>
 
-          {/* Card 2 — primary blue */}
           <StaggerItem>
             <div className="bg-primary-gradient rounded-2xl p-6 h-64 md:h-80 flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
               <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white">
@@ -221,7 +233,6 @@ export default function Home() {
             </div>
           </StaggerItem>
 
-          {/* Card 3 — surface */}
           <StaggerItem>
             <div className="card h-64 flex flex-col justify-between">
               <div className="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-primary">
@@ -237,7 +248,6 @@ export default function Home() {
             </div>
           </StaggerItem>
 
-          {/* Card 4 — horizontal with code image */}
           <StaggerItem className="md:col-span-2">
             <div className="card h-64 flex flex-col md:flex-row overflow-hidden p-0">
               <div className="flex-1 p-6 flex flex-col justify-between">
@@ -264,7 +274,7 @@ export default function Home() {
         </StaggerContainer>
       </section>
 
-      {/* ── NOS SERVICES ─────────────────────── */}
+      {/* ── NOS SERVICES — CARROUSEL ─────────── */}
       <section className="py-20 bg-surface-container-low">
         <div className="max-w-6xl mx-auto px-6">
           <AnimatedSection>
@@ -294,7 +304,8 @@ export default function Home() {
 
           <div
             ref={scrollRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide pb-2"
+            className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
+            style={{ scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch' }}
           >
             {services.map((svc, i) => (
               <motion.div
@@ -303,7 +314,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex-shrink-0 w-72 bg-surface-container-lowest rounded-2xl p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+                className="flex-shrink-0 w-[260px] snap-start bg-surface-container-lowest rounded-2xl p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
               >
                 <div className="w-11 h-11 bg-surface-container-low rounded-xl flex items-center justify-center text-primary mb-4">
                   {svc.icon}
@@ -313,6 +324,44 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── LE COLLECTIF WEBIIDIA ────────────── */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <AnimatedSection className="text-center mb-14">
+            <span className="section-label block mb-3">Notre Équipe</span>
+            <h2 className="font-manrope font-bold text-4xl md:text-5xl text-on-surface tracking-tight mb-4">
+              Le Collectif <span className="text-primary">Webiidia</span>
+            </h2>
+            <p className="font-inter text-on-surface-variant max-w-xl mx-auto">
+              Une équipe multidisciplinaire unie par une passion commune.
+            </p>
+          </AnimatedSection>
+
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6" stagger={0.1}>
+            {collectifMembers.map((member) => (
+              <StaggerItem key={member.name}>
+                <div className="text-center group">
+                  <div className="w-24 h-24 mx-auto mb-4 rounded-2xl bg-primary-gradient flex items-center justify-center shadow-card group-hover:-translate-y-1 transition-transform duration-300">
+                    <span className="font-manrope font-extrabold text-2xl text-white">{member.initials}</span>
+                  </div>
+                  <h3 className="font-manrope font-bold text-base text-on-surface tracking-tight">{member.name}</h3>
+                  <p className="font-inter text-sm text-primary mt-1">{member.role}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          <AnimatedSection className="text-center mt-10">
+            <Link
+              to="/vision"
+              className="inline-flex items-center gap-2 font-inter font-semibold text-primary hover:text-primary/80 transition-colors"
+            >
+              Voir toute l'équipe <ArrowRight size={16} />
+            </Link>
+          </AnimatedSection>
         </div>
       </section>
 

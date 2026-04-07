@@ -6,18 +6,27 @@ import CTABanner from '../components/CTABanner'
 const team = [
   {
     name: 'Kofi Mensah',
-    role: 'Directeur de Création',
+    role: 'Directeur Général',
+    initials: 'KM',
     img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=80',
   },
   {
     name: 'Aïcha Boni',
-    role: 'Lead Tech Architect',
+    role: 'Directrice Artistique',
+    initials: 'AB',
     img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&h=400&q=80',
   },
   {
     name: 'Stéphane Dossou',
-    role: 'Stratégie & UX',
+    role: 'Développeur Web',
+    initials: 'SD',
     img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&h=400&q=80',
+  },
+  {
+    name: 'Fatou Yémadjè',
+    role: 'Photographe',
+    initials: 'FY',
+    img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&h=400&q=80',
   },
 ]
 
@@ -35,7 +44,7 @@ export default function Vision() {
             <em className="not-italic text-primary">Futur Numérique.</em>
           </h1>
           <p className="font-inter text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-            Chez Webida, nous ne suivons pas les tendances — nous les créons. Notre vision est de
+            Chez Webiidia, nous ne suivons pas les tendances — nous les créons. Notre vision est de
             devenir le catalyseur de la transformation digitale en Afrique de l'Ouest.
           </p>
         </AnimatedSection>
@@ -51,7 +60,6 @@ export default function Vision() {
         </AnimatedSection>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4" stagger={0.1}>
-          {/* 01 INNOVATION */}
           <StaggerItem>
             <div className="card h-full min-h-[260px] flex flex-col justify-between">
               <div className="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-primary">
@@ -71,7 +79,6 @@ export default function Vision() {
             </div>
           </StaggerItem>
 
-          {/* 02 CRÉATIVITÉ — blue */}
           <StaggerItem>
             <div className="bg-primary-gradient rounded-2xl p-6 min-h-[260px] flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
               <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white">
@@ -93,7 +100,6 @@ export default function Vision() {
             </div>
           </StaggerItem>
 
-          {/* 03 TECHNOLOGIE */}
           <StaggerItem>
             <div className="card h-full min-h-[260px] flex flex-col justify-between">
               <div className="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-primary">
@@ -122,13 +128,13 @@ export default function Vision() {
                 <p className="font-manrope font-bold text-2xl md:text-3xl text-white leading-tight tracking-tight mb-4">
                   "Le design est la face visible de la technologie."
                 </p>
-                <p className="font-inter text-sm text-white/50">— Philosophie Webida</p>
+                <p className="font-inter text-sm text-white/50">— Philosophie Webiidia</p>
               </div>
             </div>
             <div className="relative rounded-2xl overflow-hidden h-48 md:h-auto shadow-card">
               <img
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80"
-                alt="Vision Webida"
+                alt="Vision Webiidia"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-primary/20" />
@@ -143,14 +149,14 @@ export default function Vision() {
           <AnimatedSection className="text-center mb-14">
             <span className="section-label block mb-3">Notre Équipe</span>
             <h2 className="font-manrope font-bold text-4xl text-on-surface tracking-tight mb-4">
-              Le Collectif <span className="text-primary">Webida</span>
+              Le Collectif <span className="text-primary">Webiidia</span>
             </h2>
             <p className="font-inter text-on-surface-variant max-w-xl mx-auto">
-              Des experts passionnés qui mettent leur talent au service de vos ambitions.
+              Une équipe multidisciplinaire unie par une passion commune.
             </p>
           </AnimatedSection>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8" stagger={0.12}>
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8" stagger={0.12}>
             {team.map((member) => (
               <StaggerItem key={member.name}>
                 <div className="text-center group">

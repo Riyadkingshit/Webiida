@@ -1,59 +1,69 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Palette, Globe, Sparkles, TrendingUp, Lock, Clock, MessageSquare, Award } from 'lucide-react'
+import { Lock, Clock, MessageSquare, Award } from 'lucide-react'
 import AnimatedSection from '../components/AnimatedSection'
 
-const services = [
-  {
-    id: 'branding',
-    icon: <Palette size={22} />,
-    title: 'Branding',
-    desc: 'Identité visuelle, logo, charte graphique.',
-  },
-  {
-    id: 'web',
-    icon: <Globe size={22} />,
-    title: 'Web Design',
-    desc: 'Site vitrine, e-commerce, application web.',
-  },
-  {
-    id: 'contenu',
-    icon: <Sparkles size={22} />,
-    title: 'Contenu',
-    desc: 'Stratégie éditoriale, copywriting, réseaux sociaux.',
-  },
-  {
-    id: 'ads',
-    icon: <TrendingUp size={22} />,
-    title: 'Digital Ads',
-    desc: 'Campagnes publicitaires, SEO, analytics.',
-  },
+const serviceCards = [
+  { id: 'web', emoji: '\uD83C\uDF10', title: 'Création de sites web' },
+  { id: 'design', emoji: '\uD83C\uDFA8', title: 'Design graphique & impression' },
+  { id: 'social', emoji: '\uD83D\uDCF2', title: 'Contenu & réseaux sociaux' },
+  { id: 'seo', emoji: '\uD83D\uDCC8', title: 'SEO & publicité' },
+  { id: 'photo', emoji: '\uD83D\uDCF7', title: 'Photographie / vidéo' },
+  { id: 'tags', emoji: '\uD83C\uDFF7\uFE0F', title: 'Étiquettes Google' },
+  { id: 'business', emoji: '\uD83D\uDCCD', title: 'Google Business (création & gestion)' },
+  { id: 'print', emoji: '\uD83D\uDDA8\uFE0F', title: 'Impression (flyers, cartes, affiches)' },
 ]
 
-const budgets = [
-  { id: 'small', label: '500k — 1,5M FCFA' },
-  { id: 'medium', label: '1,5M — 5M FCFA' },
-  { id: 'large', label: '5M+ FCFA' },
+const budgetOptions = [
+  { id: 'xs', label: 'Moins de 500 000 FCFA' },
+  { id: 'sm', label: '500 000 — 1 500 000 FCFA' },
+  { id: 'md', label: '1 500 000 — 5 000 000 FCFA' },
+  { id: 'lg', label: 'Plus de 5 000 000 FCFA' },
+  { id: 'unknown', label: 'Je ne sais pas encore' },
+]
+
+const delaiOptions = [
+  'Moins de 2 semaines',
+  '2 à 4 semaines',
+  '1 à 2 mois',
+  '2 à 3 mois',
+  'Pas de deadline précise',
 ]
 
 const promises = [
-  { icon: <Clock size={20} />, title: 'Réponse rapide', desc: '48h max' },
-  { icon: <MessageSquare size={20} />, title: 'Atelier offert', desc: '30min consulting' },
-  { icon: <Award size={20} />, title: 'Expertise Senior', desc: '10+ ans' },
+  { icon: <Clock size={20} />, title: 'Réponse sous 48h', desc: 'Rapide et fiable' },
+  { icon: <MessageSquare size={20} />, title: 'Consultation offerte', desc: '30 min gratuites' },
+  { icon: <Award size={20} />, title: 'Expertise certifiée', desc: 'Professionnels qualifiés' },
 ]
 
 export default function Devis() {
-  const [selectedService, setSelectedService] = useState('')
+  const [selectedServices, setSelectedServices] = useState([])
   const [selectedBudget, setSelectedBudget] = useState('')
-  const [form, setForm] = useState({ name: '', email: '', description: '' })
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    sector: '',
+    description: '',
+    delai: '',
+    website: '',
+  })
   const [sent, setSent] = useState(false)
+
+  const toggleService = (id) => {
+    setSelectedServices((prev) =>
+      prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id]
+    )
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     setSent(true)
     setTimeout(() => setSent(false), 5000)
-    setForm({ name: '', email: '', description: '' })
-    setSelectedService('')
+    setForm({ name: '', email: '', phone: '', company: '', sector: '', description: '', delai: '', website: '' })
+    setSelectedServices([])
     setSelectedBudget('')
   }
 
@@ -95,7 +105,7 @@ export default function Devis() {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-10">
-              {/* Section 01 */}
+              {/* ── Section 01 — Qui êtes-vous ? ── */}
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <span className="w-8 h-8 bg-primary text-white text-xs font-manrope font-bold rounded-lg flex items-center justify-center">01</span>
@@ -128,53 +138,86 @@ export default function Devis() {
                       className="input-field"
                     />
                   </div>
+                  <div>
+                    <label className="font-inter text-xs text-on-surface-variant uppercase tracking-widest block mb-1.5">
+                      Téléphone / WhatsApp
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="+229 01 90 19 58 02"
+                      value={form.phone}
+                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                      className="input-field"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-inter text-xs text-on-surface-variant uppercase tracking-widest block mb-1.5">
+                      Nom entreprise
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Ma Société SARL"
+                      value={form.company}
+                      onChange={(e) => setForm({ ...form, company: e.target.value })}
+                      className="input-field"
+                    />
+                  </div>
+                  <div className="md:col-span-2">
+                    <label className="font-inter text-xs text-on-surface-variant uppercase tracking-widest block mb-1.5">
+                      Secteur d'activité
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Commerce, Tech, Restauration, Santé..."
+                      value={form.sector}
+                      onChange={(e) => setForm({ ...form, sector: e.target.value })}
+                      className="input-field"
+                    />
+                  </div>
                 </div>
               </div>
 
-              {/* Divider */}
               <div className="h-px bg-outline-variant" />
 
-              {/* Section 02 */}
+              {/* ── Section 02 — Quel est votre besoin ? ── */}
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <span className="w-8 h-8 bg-primary text-white text-xs font-manrope font-bold rounded-lg flex items-center justify-center">02</span>
                   <h2 className="font-manrope font-bold text-xl text-on-surface tracking-tight">Quel est votre besoin ?</h2>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {services.map((svc) => (
+                  {serviceCards.map((svc) => (
                     <button
                       key={svc.id}
                       type="button"
-                      onClick={() => setSelectedService(selectedService === svc.id ? '' : svc.id)}
+                      onClick={() => toggleService(svc.id)}
                       className={`text-left p-4 rounded-xl transition-all duration-200 ${
-                        selectedService === svc.id
+                        selectedServices.includes(svc.id)
                           ? 'bg-primary/5 ring-2 ring-primary/30'
                           : 'bg-surface-container-low hover:bg-surface-container-highest'
                       }`}
                     >
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${
-                        selectedService === svc.id ? 'bg-primary text-white' : 'bg-surface-container-lowest text-primary'
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 text-lg ${
+                        selectedServices.includes(svc.id) ? 'bg-primary text-white' : 'bg-surface-container-lowest'
                       }`}>
-                        {svc.icon}
+                        {selectedServices.includes(svc.id) ? '✓' : svc.emoji}
                       </div>
                       <p className="font-manrope font-bold text-sm text-on-surface tracking-tight">{svc.title}</p>
-                      <p className="font-inter text-xs text-on-surface-variant mt-0.5">{svc.desc}</p>
                     </button>
                   ))}
                 </div>
               </div>
 
-              {/* Divider */}
               <div className="h-px bg-outline-variant" />
 
-              {/* Section 03 */}
+              {/* ── Section 03 — Budget estimé ── */}
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <span className="w-8 h-8 bg-primary text-white text-xs font-manrope font-bold rounded-lg flex items-center justify-center">03</span>
-                  <h2 className="font-manrope font-bold text-xl text-on-surface tracking-tight">Budget estimé</h2>
+                  <h2 className="font-manrope font-bold text-xl text-on-surface tracking-tight">Budget estimé (en FCFA)</h2>
                 </div>
                 <div className="space-y-3">
-                  {budgets.map((b) => (
+                  {budgetOptions.map((b) => (
                     <label
                       key={b.id}
                       className={`flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 ${
@@ -206,26 +249,61 @@ export default function Devis() {
                 </div>
               </div>
 
-              {/* Divider */}
               <div className="h-px bg-outline-variant" />
 
-              {/* Section 04 */}
+              {/* ── Section 04 — Votre projet ── */}
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <span className="w-8 h-8 bg-primary text-white text-xs font-manrope font-bold rounded-lg flex items-center justify-center">04</span>
-                  <h2 className="font-manrope font-bold text-xl text-on-surface tracking-tight">Dites-nous tout</h2>
+                  <h2 className="font-manrope font-bold text-xl text-on-surface tracking-tight">Votre projet</h2>
                 </div>
-                <textarea
-                  rows={5}
-                  required
-                  placeholder="Décrivez votre projet, vos objectifs, vos délais, vos inspirations..."
-                  value={form.description}
-                  onChange={(e) => setForm({ ...form, description: e.target.value })}
-                  className="input-field resize-none"
-                />
+                <div className="space-y-4">
+                  <div>
+                    <label className="font-inter text-xs text-on-surface-variant uppercase tracking-widest block mb-1.5">
+                      Description du projet
+                    </label>
+                    <textarea
+                      rows={5}
+                      required
+                      placeholder="Décrivez votre projet, vos objectifs, vos inspirations..."
+                      value={form.description}
+                      onChange={(e) => setForm({ ...form, description: e.target.value })}
+                      className="input-field resize-none"
+                    />
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="font-inter text-xs text-on-surface-variant uppercase tracking-widest block mb-1.5">
+                        Délai souhaité
+                      </label>
+                      <select
+                        value={form.delai}
+                        onChange={(e) => setForm({ ...form, delai: e.target.value })}
+                        className="input-field"
+                      >
+                        <option value="">Sélectionnez un délai</option>
+                        {delaiOptions.map((d) => (
+                          <option key={d} value={d}>{d}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="font-inter text-xs text-on-surface-variant uppercase tracking-widest block mb-1.5">
+                        Site web existant (optionnel)
+                      </label>
+                      <input
+                        type="url"
+                        placeholder="https://monsite.com"
+                        value={form.website}
+                        onChange={(e) => setForm({ ...form, website: e.target.value })}
+                        className="input-field"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Submit */}
+              {/* ── Submit ── */}
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
                 <p className="flex items-center gap-2 font-inter text-xs text-on-surface-variant">
                   <Lock size={13} />

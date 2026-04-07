@@ -10,6 +10,14 @@ const navLinks = [
   { to: '/contact', label: 'Contact' },
 ]
 
+const mobileNavLinks = [
+  { to: '/', label: 'Accueil' },
+  { to: '/expertise', label: 'Expertise' },
+  { to: '/projets', label: 'Projets' },
+  { to: '/vision', label: 'Vision' },
+  { to: '/contact', label: 'Contact' },
+]
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -157,7 +165,7 @@ export default function Navbar() {
             style={{ border: '1px solid rgba(195,197,217,0.20)' }}
           >
             <div className="flex flex-col items-center gap-1 p-4">
-              {navLinks.map((link) => (
+              {mobileNavLinks.map((link) => (
                 <NavLink
                   key={link.to}
                   to={link.to}

@@ -3,7 +3,14 @@ import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Clock, Award } from 'lucide-react'
 import AnimatedSection from '../components/AnimatedSection'
 
-const projectTypes = ['Stratégie', 'Développement Web', 'UI/UX Design', 'E-commerce']
+const projectTypes = [
+  'Création de sites web',
+  'Design graphique',
+  'Réseaux sociaux',
+  'SEO & publicité',
+  'Photographie / vidéo',
+  'Google Business',
+]
 
 export default function Contact() {
   const [selectedType, setSelectedType] = useState('')
@@ -45,7 +52,6 @@ export default function Contact() {
           {/* Colonne gauche — infos */}
           <AnimatedSection variant="slideLeft">
             <div className="space-y-6">
-              {/* Email */}
               <div className="card flex items-start gap-4">
                 <div className="w-11 h-11 bg-surface-container-low rounded-xl flex items-center justify-center text-primary flex-shrink-0">
                   <Mail size={20} />
@@ -61,7 +67,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Téléphone */}
               <div className="card flex items-start gap-4">
                 <div className="w-11 h-11 bg-surface-container-low rounded-xl flex items-center justify-center text-primary flex-shrink-0">
                   <Phone size={20} />
@@ -77,7 +82,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Bureau */}
               <div className="card flex items-start gap-4">
                 <div className="w-11 h-11 bg-surface-container-low rounded-xl flex items-center justify-center text-primary flex-shrink-0">
                   <MapPin size={20} />
@@ -90,7 +94,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Map stylisée */}
               <div className="relative rounded-2xl overflow-hidden h-56 shadow-card">
                 <img
                   src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80"
@@ -104,7 +107,6 @@ export default function Contact() {
                     Nous sommes ici
                   </span>
                 </div>
-                {/* Pin */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                   <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-lift">
                     <MapPin size={16} className="text-white" />
@@ -161,7 +163,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Type de projet */}
                 <div>
                   <label className="font-inter text-xs text-on-surface-variant uppercase tracking-widest block mb-2">
                     Type de projet
@@ -184,7 +185,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Message */}
                 <div>
                   <label className="font-inter text-xs text-on-surface-variant uppercase tracking-widest block mb-1.5">
                     Votre message
