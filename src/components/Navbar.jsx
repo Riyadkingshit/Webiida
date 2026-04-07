@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
+  { to: '/', label: 'Accueil' },
   { to: '/expertise', label: 'Expertise' },
   { to: '/projets', label: 'Projets' },
   { to: '/vision', label: 'Vision' },
@@ -100,6 +101,7 @@ export default function Navbar() {
               <NavLink
                 key={link.to}
                 to={link.to}
+                end={link.to === '/'}
                 className={({ isActive }) =>
                   `px-4 py-2 rounded-full text-sm font-inter font-medium transition-colors duration-200 ${
                     isActive ? 'text-primary' : 'text-on-surface-variant hover:text-on-surface'
