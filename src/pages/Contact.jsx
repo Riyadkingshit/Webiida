@@ -94,25 +94,20 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="relative rounded-2xl overflow-hidden h-56 shadow-card">
-                <img
-                  src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80"
-                  alt="Cotonou, Bénin"
-                  className="w-full h-full object-cover brightness-75"
+              <div className="rounded-2xl overflow-hidden shadow-card">
+                <iframe
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=2.3%2C6.3%2C2.5%2C6.4&layer=mapnik&marker=6.3703%2C2.3912"
+                  width="100%"
+                  height="220"
+                  style={{ border: 0, borderRadius: '16px', display: 'block' }}
+                  loading="lazy"
+                  title="Webiidia — Cotonou, Bénin"
                 />
-                <div className="absolute inset-0 bg-on-surface/30" />
-                <div className="absolute bottom-4 left-4">
-                  <span className="inline-flex items-center gap-2 bg-white/90 backdrop-blur text-on-surface text-xs font-inter font-medium px-3 py-1.5 rounded-full">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    Nous sommes ici
-                  </span>
-                </div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-lift">
-                    <MapPin size={16} className="text-white" />
-                  </div>
-                </div>
               </div>
+              <p className="font-inter text-xs text-on-surface-variant mt-2 flex items-center gap-1">
+                <MapPin size={12} className="text-primary flex-shrink-0" />
+                Quartier Zogbohouè, Cotonou, Bénin
+              </p>
             </div>
           </AnimatedSection>
 

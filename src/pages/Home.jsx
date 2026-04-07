@@ -1,10 +1,7 @@
-import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   ArrowRight,
-  ChevronLeft,
-  ChevronRight,
   Globe,
   Palette,
   Megaphone,
@@ -99,22 +96,34 @@ const servicePills = [
   'Google Business',
 ]
 
-const collectifMembers = [
-  { name: 'Kofi Mensah', role: 'Directeur Général', initials: 'KM' },
-  { name: 'Aïcha Boni', role: 'Directrice Artistique', initials: 'AB' },
-  { name: 'Stéphane Dossou', role: 'Développeur Web', initials: 'SD' },
-  { name: 'Fatou Yémadjè', role: 'Photographe', initials: 'FY' },
+const teamMembers = [
+  {
+    initials: 'RW',
+    name: 'Riyad Walker',
+    role: 'CEO & Fondateur',
+    skills: ['Web Design', 'Réseaux Informatiques', 'Graphisme', 'IA'],
+  },
+  {
+    initials: 'SF',
+    name: 'S. Farid',
+    role: 'Graphiste & Créateur de Contenu',
+    skills: ['Graphisme', 'Création de contenu', 'Identité visuelle'],
+  },
+  {
+    initials: 'OR',
+    name: 'O. Romaric',
+    role: 'Photographe',
+    skills: ['Photo produit', 'Portrait corporate', 'Vidéo'],
+  },
+  {
+    initials: 'FM',
+    name: 'F. Mariano',
+    role: 'Développeur Full Stack',
+    skills: ['React', 'Node.js', 'Next.js', 'Base de données'],
+  },
 ]
 
 export default function Home() {
-  const scrollRef = useRef(null)
-
-  const scroll = (dir) => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: dir * 280, behavior: 'smooth' })
-    }
-  }
-
   return (
     <div className="pt-24">
       {/* ── HERO ─────────────────────────────── */}
@@ -278,43 +287,34 @@ export default function Home() {
       <section className="py-20 bg-surface-container-low">
         <div className="max-w-6xl mx-auto px-6">
           <AnimatedSection>
-            <div className="flex items-end justify-between mb-10">
-              <div>
-                <span className="section-label block mb-3">Ce que nous offrons</span>
-                <h2 className="font-manrope font-bold text-4xl text-on-surface tracking-tight">
-                  Nos <span className="text-primary">Services</span>
-                </h2>
-              </div>
-              <div className="hidden md:flex gap-2">
-                <button
-                  onClick={() => scroll(-1)}
-                  className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors shadow-card"
-                >
-                  <ChevronLeft size={18} />
-                </button>
-                <button
-                  onClick={() => scroll(1)}
-                  className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors shadow-card"
-                >
-                  <ChevronRight size={18} />
-                </button>
-              </div>
+            <div className="mb-10">
+              <span className="section-label block mb-3">Ce que nous offrons</span>
+              <h2 className="font-manrope font-bold text-4xl text-on-surface tracking-tight">
+                Nos <span className="text-primary">Services</span>
+              </h2>
             </div>
           </AnimatedSection>
 
+          {/* CSS-only snap carousel */}
           <div
-            ref={scrollRef}
-            className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
-            style={{ scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch' }}
+            className="flex gap-4 pb-4"
+            style={{
+              overflowX: 'scroll',
+              scrollSnapType: 'x mandatory',
+              WebkitOverflowScrolling: 'touch',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+            }}
           >
             {services.map((svc, i) => (
               <motion.div
                 key={svc.title}
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex-shrink-0 w-[260px] snap-start bg-surface-container-lowest rounded-2xl p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                style={{ scrollSnapAlign: 'start', flexShrink: 0, width: '260px' }}
+                className="bg-surface-container-lowest rounded-2xl p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
               >
                 <div className="w-11 h-11 bg-surface-container-low rounded-xl flex items-center justify-center text-primary mb-4">
                   {svc.icon}
@@ -324,31 +324,48 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          {/* Dots indicator */}
+          <div className="flex justify-center gap-1.5 mt-4">
+            {services.map((_, i) => (
+              <span
+                key={i}
+                className={`rounded-full transition-all duration-300 ${i === 0 ? 'w-4 h-1.5 bg-primary' : 'w-1.5 h-1.5 bg-on-surface-variant/20'}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ── LE COLLECTIF WEBIIDIA ────────────── */}
+      {/* ── NOTRE ÉQUIPE ────────────────────── */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <AnimatedSection className="text-center mb-14">
             <span className="section-label block mb-3">Notre Équipe</span>
             <h2 className="font-manrope font-bold text-4xl md:text-5xl text-on-surface tracking-tight mb-4">
-              Le Collectif <span className="text-primary">Webiidia</span>
+              Notre <span className="text-primary">Équipe</span>
             </h2>
             <p className="font-inter text-on-surface-variant max-w-xl mx-auto">
-              Une équipe multidisciplinaire unie par une passion commune.
+              Des experts passionnés au service de votre croissance digitale.
             </p>
           </AnimatedSection>
 
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6" stagger={0.1}>
-            {collectifMembers.map((member) => (
+            {teamMembers.map((member) => (
               <StaggerItem key={member.name}>
                 <div className="text-center group">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-2xl bg-primary-gradient flex items-center justify-center shadow-card group-hover:-translate-y-1 transition-transform duration-300">
-                    <span className="font-manrope font-extrabold text-2xl text-white">{member.initials}</span>
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-primary-gradient flex items-center justify-center shadow-card group-hover:-translate-y-1 transition-transform duration-300">
+                    <span className="font-manrope font-extrabold text-xl text-white">{member.initials}</span>
                   </div>
-                  <h3 className="font-manrope font-bold text-base text-on-surface tracking-tight">{member.name}</h3>
-                  <p className="font-inter text-sm text-primary mt-1">{member.role}</p>
+                  <h3 className="font-manrope font-bold text-sm text-on-surface tracking-tight">{member.name}</h3>
+                  <p className="font-inter text-xs text-primary mt-0.5 mb-2">{member.role}</p>
+                  <div className="flex flex-wrap justify-center gap-1">
+                    {member.skills.slice(0, 2).map((skill) => (
+                      <span key={skill} className="text-[10px] font-inter bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded-full">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </StaggerItem>
             ))}

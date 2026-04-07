@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Send, MessageCircle } from 'lucide-react'
 
-const WELCOME_MSG = "Bonjour ! Je suis l'assistant Webiidia. Je peux vous renseigner sur nos services, nos tarifs et vous aider à démarrer votre projet. Comment puis-je vous aider ?"
+const WELCOME_MSG = "Bonjour ! 👋 Je suis l'Agent IA Webiidia.\nJe peux vous renseigner sur nos services, tarifs et vous aider à démarrer votre projet.\nQue puis-je faire pour vous ?"
 
 const keywordResponses = [
   {
@@ -148,19 +148,29 @@ export default function ChatBot() {
       {/* Floating button */}
       <AnimatePresence>
         {!open && (
-          <motion.button
+          <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            onClick={() => setOpen(true)}
-            className="fixed bottom-6 right-6 z-[9999] w-14 h-14 bg-primary-gradient rounded-full flex items-center justify-center shadow-lift hover:scale-105 transition-transform"
+            className="fixed bottom-6 right-6 z-[9999] flex flex-col items-center gap-1"
           >
-            <MessageCircle size={24} className="text-white" />
-            <span className="absolute -top-1 -right-1 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-card">
-              <span className="font-manrope font-extrabold text-[9px] text-primary">IA</span>
+            <button
+              onClick={() => setOpen(true)}
+              title="Discuter avec notre Agent IA"
+              className="relative w-14 h-14 bg-primary-gradient rounded-full flex items-center justify-center shadow-lift hover:scale-105 transition-transform"
+            >
+              {/* Pulse badge */}
+              <span className="absolute -top-1 -right-1 flex">
+                <span className="w-3.5 h-3.5 bg-red-500 rounded-full animate-ping absolute opacity-75" />
+                <span className="w-3.5 h-3.5 bg-red-500 rounded-full relative" />
+              </span>
+              <MessageCircle size={24} className="text-white" />
+            </button>
+            <span className="text-[10px] font-manrope font-bold text-white bg-on-surface/70 backdrop-blur px-2 py-0.5 rounded-full">
+              Agent IA
             </span>
-          </motion.button>
+          </motion.div>
         )}
       </AnimatePresence>
 
