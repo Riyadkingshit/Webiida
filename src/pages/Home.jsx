@@ -4,12 +4,9 @@ import {
   ArrowRight,
   Globe,
   Palette,
-  Megaphone,
-  SearchCheck,
-  Camera,
+  Share2,
   TrendingUp,
-  Tag,
-  MapPin,
+  Camera,
 } from 'lucide-react'
 import AnimatedSection, { StaggerContainer, StaggerItem } from '../components/AnimatedSection'
 import CTABanner from '../components/CTABanner'
@@ -18,37 +15,27 @@ const services = [
   {
     icon: <Globe size={22} />,
     title: 'Création de sites web',
-    desc: 'Conception et développement de sites vitrines, e-commerce et applications web sur mesure.',
+    desc: 'Sites vitrines, e-commerce et applications web sur mesure, performants et optimisés pour convertir.',
   },
   {
     icon: <Palette size={22} />,
-    title: 'Design graphique & impression',
-    desc: 'Identité visuelle, logo, charte graphique, flyers, cartes de visite et tous supports print.',
+    title: 'Design graphique et impression',
+    desc: 'Logo, identité visuelle, supports print et digitaux qui reflètent vos valeurs.',
   },
   {
-    icon: <Megaphone size={22} />,
+    icon: <Share2 size={22} />,
     title: 'Contenu & réseaux sociaux',
-    desc: 'Stratégie éditoriale, création de contenu et community management pour vos réseaux.',
+    desc: 'Stratégie éditoriale, création et gestion de vos communautés sur tous les réseaux.',
   },
   {
-    icon: <SearchCheck size={22} />,
+    icon: <TrendingUp size={22} />,
     title: 'SEO & publicité',
-    desc: 'Référencement naturel, Google Ads, Meta Ads et optimisation de votre visibilité en ligne.',
+    desc: 'Référencement naturel, Google Ads et Meta Ads pour booster votre visibilité au Bénin et en Afrique.',
   },
   {
     icon: <Camera size={22} />,
     title: 'Photographie / vidéo',
-    desc: 'Shooting professionnel, reportage corporate, vidéo institutionnelle et contenu visuel.',
-  },
-  {
-    icon: <Tag size={22} />,
-    title: 'Étiquettes Google',
-    desc: 'Configuration Google Tag Manager & Analytics pour suivre et optimiser vos performances.',
-  },
-  {
-    icon: <MapPin size={22} />,
-    title: 'Google Business',
-    desc: 'Création et optimisation de votre fiche Google Business pour la visibilité locale.',
+    desc: 'Shootings produit, portraits corporate et films institutionnels qui racontent votre histoire.',
   },
 ]
 
@@ -88,12 +75,11 @@ const expertiseCards = [
 ]
 
 const servicePills = [
-  'Sites web',
+  'Création de sites web',
   'Design graphique',
-  'Réseaux sociaux',
+  'Contenu & réseaux sociaux',
   'SEO & publicité',
-  'Photographie',
-  'Google Business',
+  'Photographie / vidéo',
 ]
 
 const teamMembers = [
@@ -219,9 +205,9 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-on-surface/70 via-transparent" />
               <div className="absolute bottom-6 left-6 text-white">
                 <p className="font-inter text-xs tracking-widest uppercase text-white/60 mb-1">01</p>
-                <h3 className="font-manrope font-bold text-2xl tracking-tight">Stratégie Digitale</h3>
+                <h3 className="font-manrope font-bold text-2xl tracking-tight">Création de sites web</h3>
                 <p className="font-inter text-sm text-white/70 mt-1 max-w-xs">
-                  Une vision à 360° pour maximiser votre impact en ligne.
+                  Sites vitrines, e-commerce et applications web sur mesure, performants et optimisés pour convertir.
                 </p>
               </div>
             </div>
@@ -234,9 +220,9 @@ export default function Home() {
               </div>
               <div>
                 <p className="font-inter text-xs tracking-widest uppercase text-white/50 mb-1">02</p>
-                <h3 className="font-manrope font-bold text-2xl text-white tracking-tight">Performance SEO</h3>
+                <h3 className="font-manrope font-bold text-2xl text-white tracking-tight">SEO & publicité</h3>
                 <p className="font-inter text-sm text-white/70 mt-2">
-                  Classez-vous en première page et attirez des visiteurs qualifiés.
+                  Référencement naturel, Google Ads et Meta Ads pour booster votre visibilité.
                 </p>
               </div>
             </div>
@@ -249,9 +235,9 @@ export default function Home() {
               </div>
               <div>
                 <p className="font-inter text-xs tracking-widest uppercase text-on-surface-variant/50 mb-1">03</p>
-                <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight">Design UI/UX</h3>
+                <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight">Design graphique et impression</h3>
                 <p className="font-inter text-sm text-on-surface-variant mt-2">
-                  Interfaces intuitives et expériences utilisateur mémorables.
+                  Logo, identité visuelle, supports print et digitaux qui reflètent vos valeurs.
                 </p>
               </div>
             </div>
@@ -261,22 +247,37 @@ export default function Home() {
             <div className="card h-64 flex flex-col md:flex-row overflow-hidden p-0">
               <div className="flex-1 p-6 flex flex-col justify-between">
                 <div className="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-primary">
-                  <Globe size={22} />
+                  <Share2 size={22} />
                 </div>
                 <div>
                   <p className="font-inter text-xs tracking-widest uppercase text-on-surface-variant/50 mb-1">04</p>
-                  <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight">Développement Web</h3>
+                  <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight">Contenu & réseaux sociaux</h3>
                   <p className="font-inter text-sm text-on-surface-variant mt-2">
-                    Applications web robustes et sites haute performance.
+                    Stratégie éditoriale, création et gestion de vos communautés sur tous les réseaux.
                   </p>
                 </div>
               </div>
               <div className="w-full md:w-1/2 h-40 md:h-auto">
                 <img
-                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80"
-                  alt="Développement Web"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+                  alt="Contenu & réseaux sociaux"
                   className="w-full h-full object-cover rounded-r-2xl"
                 />
+              </div>
+            </div>
+          </StaggerItem>
+
+          <StaggerItem className="md:col-span-3">
+            <div className="bg-primary-gradient rounded-2xl p-6 h-48 flex flex-col md:flex-row items-center gap-6 group transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+              <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                <Camera size={22} />
+              </div>
+              <div>
+                <p className="font-inter text-xs tracking-widest uppercase text-white/50 mb-1">05</p>
+                <h3 className="font-manrope font-bold text-2xl text-white tracking-tight">Photographie / vidéo</h3>
+                <p className="font-inter text-sm text-white/70 mt-2 max-w-xl">
+                  Shootings produit, portraits corporate et films institutionnels qui racontent votre histoire.
+                </p>
               </div>
             </div>
           </StaggerItem>

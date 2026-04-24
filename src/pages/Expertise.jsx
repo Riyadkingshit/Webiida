@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Globe, Palette, Megaphone, SearchCheck, Camera, Tag, MapPin, Check, ArrowRight } from 'lucide-react'
+import { Globe, Palette, Share2, TrendingUp, Camera, Check, ArrowRight } from 'lucide-react'
 import AnimatedSection, { StaggerContainer, StaggerItem } from '../components/AnimatedSection'
 import CTABanner from '../components/CTABanner'
 
@@ -54,7 +54,7 @@ export default function Expertise() {
               </div>
               <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight mb-3">Création de sites web</h3>
               <p className="font-inter text-sm text-on-surface-variant leading-relaxed mb-5">
-                Des sites performants qui convertissent vos visiteurs en clients.
+                Sites vitrines, e-commerce et applications web sur mesure, performants et optimisés pour convertir.
               </p>
               <div className="flex flex-wrap gap-2">
                 {['Vitrine', 'E-Commerce', 'App Web'].map((tag) => (
@@ -94,9 +94,9 @@ export default function Expertise() {
                 <div className="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-primary mb-5">
                   <Palette size={22} />
                 </div>
-                <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight mb-3">Design graphique & impression</h3>
+                <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight mb-3">Design graphique et impression</h3>
                 <p className="font-inter text-sm text-on-surface-variant leading-relaxed">
-                  Identité visuelle forte, supports de communication percutants, flyers, cartes de visite et charte graphique cohérente.
+                  Logo, identité visuelle, supports print et digitaux qui reflètent vos valeurs.
                 </p>
               </div>
             </div>
@@ -107,11 +107,11 @@ export default function Expertise() {
             <div className="card h-full flex flex-col md:flex-row gap-6 overflow-hidden p-0">
               <div className="flex-1 p-6">
                 <div className="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-primary mb-5">
-                  <Megaphone size={22} />
+                  <Share2 size={22} />
                 </div>
                 <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight mb-3">Contenu & réseaux sociaux</h3>
                 <p className="font-inter text-sm text-on-surface-variant leading-relaxed">
-                  Stratégie éditoriale, copywriting impactant, community management et production de contenus multicanaux pour engager votre audience.
+                  Stratégie éditoriale, création et gestion de vos communautés sur tous les réseaux.
                 </p>
               </div>
               <div className="w-full md:w-48 h-48 md:h-auto flex-shrink-0">
@@ -128,11 +128,11 @@ export default function Expertise() {
           <StaggerItem>
             <div className="card h-full">
               <div className="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-primary mb-5">
-                <SearchCheck size={22} />
+                <TrendingUp size={22} />
               </div>
               <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight mb-4">SEO & publicité</h3>
               <ul className="space-y-2">
-                {['Audit Technique', 'Google Ads & Meta Ads', 'Reporting Mensuel', 'Optimisation SEO'].map((item) => (
+                {['Référencement naturel', 'Google Ads & Meta Ads', 'Reporting Mensuel'].map((item) => (
                   <li key={item} className="flex items-center gap-2 font-inter text-sm text-on-surface-variant">
                     <Check size={14} className="text-primary flex-shrink-0" />
                     {item}
@@ -143,7 +143,7 @@ export default function Expertise() {
           </StaggerItem>
 
           {/* Photographie / vidéo — blue */}
-          <StaggerItem>
+          <StaggerItem className="md:col-span-2">
             <div className="bg-primary-gradient rounded-2xl p-6 h-full flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1 hover:shadow-lift min-h-[200px]">
               <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white mb-5">
                 <Camera size={22} />
@@ -151,7 +151,7 @@ export default function Expertise() {
               <div>
                 <h3 className="font-manrope font-bold text-2xl text-white tracking-tight mb-2">Photographie / vidéo</h3>
                 <p className="font-inter text-sm text-white/70 mb-4">
-                  Shooting professionnel, reportage corporate, vidéo institutionnelle et contenu visuel pour valoriser votre marque.
+                  Shootings produit, portraits corporate et films institutionnels qui racontent votre histoire.
                 </p>
                 <Link
                   to="/projets"
@@ -159,25 +159,6 @@ export default function Expertise() {
                 >
                   Voir le portfolio <ArrowRight size={14} />
                 </Link>
-              </div>
-            </div>
-          </StaggerItem>
-
-          {/* Étiquettes Google + Google Business */}
-          <StaggerItem>
-            <div className="card h-full">
-              <div className="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-primary mb-5">
-                <Tag size={22} />
-              </div>
-              <h3 className="font-manrope font-bold text-xl text-on-surface tracking-tight mb-3">Étiquettes Google</h3>
-              <p className="font-inter text-sm text-on-surface-variant leading-relaxed mb-4">
-                Configuration Google Tag Manager & Analytics pour mesurer et optimiser vos performances digitales.
-              </p>
-              <div className="flex items-center gap-2 pt-2 border-t border-outline-variant">
-                <MapPin size={16} className="text-primary flex-shrink-0" />
-                <p className="font-inter text-sm text-on-surface-variant">
-                  + Création de compte Google Business
-                </p>
               </div>
             </div>
           </StaggerItem>

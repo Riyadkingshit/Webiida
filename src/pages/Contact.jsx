@@ -3,14 +3,7 @@ import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Clock, Award } from 'lucide-react'
 import AnimatedSection from '../components/AnimatedSection'
 
-const projectTypes = [
-  'Création de sites web',
-  'Design graphique',
-  'Réseaux sociaux',
-  'SEO & publicité',
-  'Photographie / vidéo',
-  'Google Business',
-]
+const projectTypes = ['Création Web', 'Design & Impression', 'Social Media', 'SEO & Pub', 'Photo & Vidéo']
 
 export default function Contact() {
   const [selectedType, setSelectedType] = useState('')
@@ -137,7 +130,7 @@ export default function Contact() {
                     <input
                       type="text"
                       required
-                      placeholder="Jean Dupont"
+                      placeholder="Votre nom"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       className="input-field"
@@ -150,7 +143,7 @@ export default function Contact() {
                     <input
                       type="email"
                       required
-                      placeholder="jean@exemple.com"
+                      placeholder="Votre email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       className="input-field"
@@ -187,7 +180,7 @@ export default function Contact() {
                   <textarea
                     rows={5}
                     required
-                    placeholder="Décrivez votre projet en quelques mots..."
+                    placeholder="Votre message"
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     className="input-field resize-none"

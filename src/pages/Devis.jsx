@@ -6,13 +6,10 @@ import AnimatedSection from '../components/AnimatedSection'
 
 const serviceCards = [
   { id: 'web', emoji: '\uD83C\uDF10', title: 'Création de sites web' },
-  { id: 'design', emoji: '\uD83C\uDFA8', title: 'Design graphique & impression' },
+  { id: 'design', emoji: '\uD83C\uDFA8', title: 'Design graphique et impression' },
   { id: 'social', emoji: '\uD83D\uDCF2', title: 'Contenu & réseaux sociaux' },
   { id: 'seo', emoji: '\uD83D\uDCC8', title: 'SEO & publicité' },
   { id: 'photo', emoji: '\uD83D\uDCF7', title: 'Photographie / vidéo' },
-  { id: 'tags', emoji: '\uD83C\uDFF7\uFE0F', title: 'Étiquettes Google' },
-  { id: 'business', emoji: '\uD83D\uDCCD', title: 'Google Business (création & gestion)' },
-  { id: 'print', emoji: '\uD83D\uDDA8\uFE0F', title: 'Impression (flyers, cartes, affiches)' },
 ]
 
 const budgetOptions = [
@@ -119,7 +116,7 @@ export default function Devis() {
                     <input
                       type="text"
                       required
-                      placeholder="Jean Koffi"
+                      placeholder="Votre nom"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       className="input-field"
@@ -132,7 +129,7 @@ export default function Devis() {
                     <input
                       type="email"
                       required
-                      placeholder="jean@societe.com"
+                      placeholder="Votre email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       className="input-field"
