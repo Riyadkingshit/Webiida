@@ -140,7 +140,7 @@ export default function Contact() {
                     <input
                       type="text"
                       required
-                      placeholder="Jean Dupont"
+                      placeholder="Votre nom"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       className="input-field"
@@ -153,7 +153,7 @@ export default function Contact() {
                     <input
                       type="email"
                       required
-                      placeholder="jean@exemple.com"
+                      placeholder="Votre email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       className="input-field"
@@ -192,7 +192,7 @@ export default function Contact() {
                   <textarea
                     rows={5}
                     required
-                    placeholder="Décrivez votre projet en quelques mots..."
+                    placeholder="Votre message"
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     className="input-field resize-none"

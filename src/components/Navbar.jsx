@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
+  { to: '/', label: 'Accueil' },
   { to: '/expertise', label: 'Expertise' },
   { to: '/projets', label: 'Projets' },
   { to: '/vision', label: 'Vision' },
@@ -61,16 +62,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA button */}
-          <div className="hidden md:block">
-            <Link
-              to="/devis"
-              className="btn-primary text-sm px-5 py-2.5 rounded-full"
-            >
-              Démarrer un projet
-            </Link>
-          </div>
-
           {/* Mobile hamburger */}
           <button
             className="md:hidden p-2 rounded-full hover:bg-surface-container-low transition-colors"
@@ -109,12 +100,6 @@ export default function Navbar() {
                   {link.label}
                 </NavLink>
               ))}
-              <Link
-                to="/devis"
-                className="btn-primary text-sm mt-2 justify-center rounded-xl"
-              >
-                Démarrer un projet
-              </Link>
             </div>
           </motion.div>
         )}

@@ -115,7 +115,7 @@ export default function Devis() {
                     <input
                       type="text"
                       required
-                      placeholder="Jean Koffi"
+                      placeholder="Votre nom"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       className="input-field"
@@ -128,7 +128,7 @@ export default function Devis() {
                     <input
                       type="email"
                       required
-                      placeholder="jean@societe.com"
+                      placeholder="Votre email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       className="input-field"
@@ -224,7 +224,7 @@ export default function Devis() {
                 <textarea
                   rows={5}
                   required
-                  placeholder="Décrivez votre projet, vos objectifs, vos délais, vos inspirations..."
+                  placeholder="Décrivez votre projet..."
                   value={form.description}
                   onChange={(e) => setForm({ ...form, description: e.target.value })}
                   className="input-field resize-none"
