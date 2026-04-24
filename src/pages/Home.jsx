@@ -1,10 +1,7 @@
-import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   ArrowRight,
-  ChevronLeft,
-  ChevronRight,
   Globe,
   Palette,
   Share2,
@@ -85,20 +82,38 @@ const servicePills = [
   'Photographie / vidéo',
 ]
 
+const teamMembers = [
+  {
+    initials: 'RW',
+    name: 'Riyad Walker',
+    role: 'CEO & Fondateur',
+    skills: ['Web Design', 'Réseaux Informatiques', 'Graphisme', 'IA'],
+  },
+  {
+    initials: 'SF',
+    name: 'S. Farid',
+    role: 'Graphiste & Créateur de Contenu',
+    skills: ['Graphisme', 'Création de contenu', 'Identité visuelle'],
+  },
+  {
+    initials: 'OR',
+    name: 'O. Romaric',
+    role: 'Photographe',
+    skills: ['Photo produit', 'Portrait corporate', 'Vidéo'],
+  },
+  {
+    initials: 'FM',
+    name: 'F. Mariano',
+    role: 'Développeur Full Stack',
+    skills: ['React', 'Node.js', 'Next.js', 'Base de données'],
+  },
+]
+
 export default function Home() {
-  const scrollRef = useRef(null)
-
-  const scroll = (dir) => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: dir * 340, behavior: 'smooth' })
-    }
-  }
-
   return (
     <div className="pt-24">
       {/* ── HERO ─────────────────────────────── */}
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-6 py-20 overflow-hidden">
-        {/* Background geometric shapes */}
         <div className="geo-shape w-96 h-96 -top-20 -left-20" />
         <div className="geo-shape w-72 h-72 top-1/4 -right-16" />
         <div className="geo-shape w-48 h-48 bottom-10 left-1/4" />
@@ -109,7 +124,6 @@ export default function Home() {
           animate="visible"
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
         >
-          {/* Badge */}
           <motion.div
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             transition={{ duration: 0.6 }}
@@ -120,7 +134,6 @@ export default function Home() {
             </span>
           </motion.div>
 
-          {/* H1 */}
           <motion.h1
             className="font-manrope font-extrabold text-5xl md:text-7xl text-on-surface tracking-tight leading-[1.05] mb-6"
             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
@@ -131,17 +144,15 @@ export default function Home() {
             <span className="text-primary">créatif digital</span>
           </motion.h1>
 
-          {/* Subtitle */}
           <motion.p
             className="font-inter text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed"
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             transition={{ duration: 0.6 }}
           >
-            Webida conçoit des stratégies digitales sur mesure pour propulser votre marque
+            Webiidia conçoit des stratégies digitales sur mesure pour propulser votre marque
             au cœur du numérique — à Cotonou et au-delà.
           </motion.p>
 
-          {/* CTA buttons */}
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12"
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
@@ -156,7 +167,6 @@ export default function Home() {
             </Link>
           </motion.div>
 
-          {/* Service pills */}
           <motion.div
             className="flex flex-wrap items-center justify-center gap-2"
             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
@@ -185,7 +195,6 @@ export default function Home() {
         </AnimatedSection>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4" stagger={0.1}>
-          {/* Card 1 — image background, large */}
           <StaggerItem className="md:col-span-2">
             <div className="relative rounded-2xl overflow-hidden h-64 md:h-80 shadow-card group">
               <img
@@ -204,7 +213,6 @@ export default function Home() {
             </div>
           </StaggerItem>
 
-          {/* Card 2 — primary blue */}
           <StaggerItem>
             <div className="bg-primary-gradient rounded-2xl p-6 h-64 md:h-80 flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
               <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white">
@@ -220,7 +228,6 @@ export default function Home() {
             </div>
           </StaggerItem>
 
-          {/* Card 3 — surface */}
           <StaggerItem>
             <div className="card h-64 flex flex-col justify-between">
               <div className="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-primary">
@@ -236,7 +243,6 @@ export default function Home() {
             </div>
           </StaggerItem>
 
-          {/* Card 4 — horizontal with image */}
           <StaggerItem className="md:col-span-2">
             <div className="card h-64 flex flex-col md:flex-row overflow-hidden p-0">
               <div className="flex-1 p-6 flex flex-col justify-between">
@@ -261,7 +267,6 @@ export default function Home() {
             </div>
           </StaggerItem>
 
-          {/* Card 5 — full width blue gradient */}
           <StaggerItem className="md:col-span-3">
             <div className="bg-primary-gradient rounded-2xl p-6 h-48 flex flex-col md:flex-row items-center gap-6 group transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
               <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white flex-shrink-0">
@@ -279,46 +284,38 @@ export default function Home() {
         </StaggerContainer>
       </section>
 
-      {/* ── NOS SERVICES ─────────────────────── */}
+      {/* ── NOS SERVICES — CARROUSEL ─────────── */}
       <section className="py-20 bg-surface-container-low">
         <div className="max-w-6xl mx-auto px-6">
           <AnimatedSection>
-            <div className="flex items-end justify-between mb-10">
-              <div>
-                <span className="section-label block mb-3">Ce que nous offrons</span>
-                <h2 className="font-manrope font-bold text-4xl text-on-surface tracking-tight">
-                  Nos <span className="text-primary">Services</span>
-                </h2>
-              </div>
-              <div className="hidden md:flex gap-2">
-                <button
-                  onClick={() => scroll(-1)}
-                  className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors shadow-card"
-                >
-                  <ChevronLeft size={18} />
-                </button>
-                <button
-                  onClick={() => scroll(1)}
-                  className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors shadow-card"
-                >
-                  <ChevronRight size={18} />
-                </button>
-              </div>
+            <div className="mb-10">
+              <span className="section-label block mb-3">Ce que nous offrons</span>
+              <h2 className="font-manrope font-bold text-4xl text-on-surface tracking-tight">
+                Nos <span className="text-primary">Services</span>
+              </h2>
             </div>
           </AnimatedSection>
 
+          {/* CSS-only snap carousel */}
           <div
-            ref={scrollRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide pb-2"
+            className="flex gap-4 pb-4"
+            style={{
+              overflowX: 'scroll',
+              scrollSnapType: 'x mandatory',
+              WebkitOverflowScrolling: 'touch',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+            }}
           >
             {services.map((svc, i) => (
               <motion.div
                 key={svc.title}
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex-shrink-0 w-72 bg-surface-container-lowest rounded-2xl p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                style={{ scrollSnapAlign: 'start', flexShrink: 0, width: '260px' }}
+                className="bg-surface-container-lowest rounded-2xl p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
               >
                 <div className="w-11 h-11 bg-surface-container-low rounded-xl flex items-center justify-center text-primary mb-4">
                   {svc.icon}
@@ -328,6 +325,61 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          {/* Dots indicator */}
+          <div className="flex justify-center gap-1.5 mt-4">
+            {services.map((_, i) => (
+              <span
+                key={i}
+                className={`rounded-full transition-all duration-300 ${i === 0 ? 'w-4 h-1.5 bg-primary' : 'w-1.5 h-1.5 bg-on-surface-variant/20'}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── NOTRE ÉQUIPE ────────────────────── */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <AnimatedSection className="text-center mb-14">
+            <span className="section-label block mb-3">Notre Équipe</span>
+            <h2 className="font-manrope font-bold text-4xl md:text-5xl text-on-surface tracking-tight mb-4">
+              Notre <span className="text-primary">Équipe</span>
+            </h2>
+            <p className="font-inter text-on-surface-variant max-w-xl mx-auto">
+              Des experts passionnés au service de votre croissance digitale.
+            </p>
+          </AnimatedSection>
+
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6" stagger={0.1}>
+            {teamMembers.map((member) => (
+              <StaggerItem key={member.name}>
+                <div className="text-center group">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-primary-gradient flex items-center justify-center shadow-card group-hover:-translate-y-1 transition-transform duration-300">
+                    <span className="font-manrope font-extrabold text-xl text-white">{member.initials}</span>
+                  </div>
+                  <h3 className="font-manrope font-bold text-sm text-on-surface tracking-tight">{member.name}</h3>
+                  <p className="font-inter text-xs text-primary mt-0.5 mb-2">{member.role}</p>
+                  <div className="flex flex-wrap justify-center gap-1">
+                    {member.skills.slice(0, 2).map((skill) => (
+                      <span key={skill} className="text-[10px] font-inter bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded-full">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          <AnimatedSection className="text-center mt-10">
+            <Link
+              to="/vision"
+              className="inline-flex items-center gap-2 font-inter font-semibold text-primary hover:text-primary/80 transition-colors"
+            >
+              Voir toute l'équipe <ArrowRight size={16} />
+            </Link>
+          </AnimatedSection>
         </div>
       </section>
 

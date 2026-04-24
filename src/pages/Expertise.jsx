@@ -57,7 +57,7 @@ export default function Expertise() {
                 Sites vitrines, e-commerce et applications web sur mesure, performants et optimisés pour convertir.
               </p>
               <div className="flex flex-wrap gap-2">
-                {['Vitrine', 'E-Commerce', 'Performance'].map((tag) => (
+                {['Vitrine', 'E-Commerce', 'App Web'].map((tag) => (
                   <span key={tag} className="text-xs font-inter bg-surface-container-low text-primary px-3 py-1 rounded-full">
                     {tag}
                   </span>
@@ -117,7 +117,7 @@ export default function Expertise() {
               <div className="w-full md:w-48 h-48 md:h-auto flex-shrink-0">
                 <img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80"
-                  alt="Contenu & réseaux sociaux"
+                  alt="Équipe contenu"
                   className="w-full h-full object-cover md:rounded-r-2xl"
                 />
               </div>
@@ -169,7 +169,6 @@ export default function Expertise() {
       <section className="py-20 bg-surface-container-low">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Image gauche */}
             <AnimatedSection variant="slideLeft">
               <div className="relative rounded-2xl overflow-hidden h-80 md:h-[480px] shadow-lift">
                 <img
@@ -181,14 +180,13 @@ export default function Expertise() {
               </div>
             </AnimatedSection>
 
-            {/* Droite — processus */}
             <AnimatedSection variant="slideRight">
               <span className="section-label block mb-4">Notre méthode</span>
               <h2 className="font-manrope font-bold text-4xl text-on-surface tracking-tight mb-8">
                 Processus <span className="text-primary">Collaboratif</span>
               </h2>
               <div className="space-y-6">
-                {processSteps.map((step, i) => (
+                {processSteps.map((step) => (
                   <div key={step.num} className="flex gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-surface-container-lowest rounded-xl flex items-center justify-center shadow-card">
                       <span className="font-manrope font-bold text-sm text-primary">{step.num}</span>
@@ -216,4 +214,3 @@ export default function Expertise() {
     </div>
   )
 }
-

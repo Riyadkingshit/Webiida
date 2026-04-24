@@ -4,14 +4,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import AnimatedSection, { StaggerContainer, StaggerItem } from '../components/AnimatedSection'
 
-const filters = ['Tous', 'Web', 'Design', 'SEO', 'Photo']
+const filters = ['Tous', 'Web', 'Branding', 'SEO']
 
 const projects = [
   {
     id: 1,
     title: "L'Élite Urbaine",
     category: 'Web',
-    label: 'CRÉATION WEB',
+    label: 'WEB DEVELOPMENT',
     img: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=80',
     dark: true,
     size: 'large',
@@ -19,8 +19,8 @@ const projects = [
   {
     id: 2,
     title: 'Solaris Tech',
-    category: 'Design',
-    label: 'DESIGN GRAPHIQUE',
+    category: 'Branding',
+    label: 'BRANDING',
     img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
     dark: false,
     size: 'small',
@@ -29,7 +29,7 @@ const projects = [
     id: 3,
     title: 'Echo Magazine',
     category: 'SEO',
-    label: 'SEO & PUBLICITÉ',
+    label: 'SEO & WEB',
     img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80',
     dark: false,
     size: 'small',
@@ -38,7 +38,7 @@ const projects = [
     id: 4,
     title: 'Accélération Nexa',
     category: 'Web',
-    label: 'CRÉATION WEB',
+    label: 'STRATÉGIE DIGITALE',
     img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80',
     dark: true,
     size: 'large',
@@ -46,26 +46,27 @@ const projects = [
   {
     id: 5,
     title: 'Vogue Paris',
-    category: 'Design',
-    label: 'DESIGN & IMPRESSION',
+    category: 'Branding',
+    label: 'BRANDING',
     img: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80',
     dark: true,
     size: 'equal',
   },
   {
     id: 6,
-    title: 'DataStream',
+    title: 'DataStream Analytics',
     category: 'SEO',
-    label: 'SEO',
-    img: 'https://images.unsplash.com/photo-1585399000684-d2f72d519997?auto=format&fit=crop&w=600&q=80',
-    dark: false,
+    label: 'SEO & STRATÉGIE',
+    desc: 'Stratégie SEO complète et optimisation du tunnel de conversion pour une plateforme data béninoise.',
+    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80',
+    dark: true,
     size: 'equal',
   },
   {
     id: 7,
     title: 'Koda SaaS',
-    category: 'Photo',
-    label: 'PHOTO & VIDÉO',
+    category: 'Web',
+    label: 'WEB',
     img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80',
     dark: false,
     size: 'equal',
@@ -100,6 +101,9 @@ function ProjectCard({ project, className = '' }) {
       <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
         <div className="bg-white/10 backdrop-blur-md rounded-xl p-4" style={{ border: '1px solid rgba(255,255,255,0.15)' }}>
           <h3 className="font-manrope font-bold text-lg text-white tracking-tight">{project.title}</h3>
+          {project.desc && (
+            <p className="font-inter text-xs text-white/70 mt-1">{project.desc}</p>
+          )}
           <Link
             to="/contact"
             className="inline-flex items-center gap-1 text-sm font-inter text-white/80 hover:text-white mt-1 transition-colors"
@@ -165,7 +169,6 @@ export default function Projets() {
       {/* ── GRILLE PROJETS ─────────────────── */}
       <section className="px-6 pb-20 max-w-6xl mx-auto">
         <AnimatePresence>
-          {/* Row 1 */}
           {(row1.length > 0) && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
               {filtered.find((p) => p.id === 1) && (
@@ -177,7 +180,6 @@ export default function Projets() {
             </div>
           )}
 
-          {/* Row 2 */}
           {(row2.length > 0) && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
               {filtered.find((p) => p.id === 3) && (
@@ -189,7 +191,6 @@ export default function Projets() {
             </div>
           )}
 
-          {/* Row 3 */}
           {(row3.length > 0) && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[5, 6, 7].map((id) => {
@@ -199,7 +200,6 @@ export default function Projets() {
             </div>
           )}
 
-          {/* Aucun résultat */}
           {filtered.length === 0 && (
             <motion.div
               initial={{ opacity: 0 }}
