@@ -3,12 +3,10 @@ import { Instagram, Linkedin } from 'lucide-react'
 
 const footerServices = [
   'Création de sites web',
-  'Design graphique & impression',
+  'Design graphique et impression',
   'Contenu & réseaux sociaux',
   'SEO & publicité',
   'Photographie / vidéo',
-  'Étiquettes Google',
-  'Google Business',
 ]
 
 export default function Footer() {

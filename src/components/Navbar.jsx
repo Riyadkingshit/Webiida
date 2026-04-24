@@ -113,13 +113,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <Link to="/devis" className="btn-primary text-sm px-5 py-2.5 rounded-full">
-              Démarrer un projet
-            </Link>
-          </div>
-
           {/* Mobile hamburger */}
           <button
             className="md:hidden p-2 rounded-full hover:bg-surface-container-low transition-colors"
@@ -182,12 +175,7 @@ export default function Navbar() {
                   {link.label}
                 </NavLink>
               ))}
-              <Link
-                to="/devis"
-                className="btn-primary w-full text-base mt-3 justify-center rounded-xl py-3.5"
-              >
-                Démarrer un projet
-              </Link>
+
             </div>
           </motion.div>
         )}
